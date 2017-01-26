@@ -1,0 +1,1 @@
+1..1000 | % {$test= new-object system.Net.Sockets.TcpClient; $wait = $test.beginConnect("45.79.204.144",$_,$null,$null); ($wait.asyncwaithandle.waitone(50,$false)); if ($test.Connected){echo "$_ open"}else{echo "$_ closed"}} | select-string " "
